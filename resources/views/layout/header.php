@@ -20,7 +20,7 @@
         <main class="container">
 
            <!-- Image and text -->
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-light ">
                 <a class="navbar-brand" href="<?php route('home')?>">
                     <img src="./img/quizz.png" width="80" height="80" class="d-inline-block align-top" alt="">
                     O'Quiz
