@@ -38,8 +38,9 @@ a{
 
 .home-card{
     margin: 5px auto;
-    height: 200px;
+    
     border-radius: 5px;
+    box-shadow: 10px 10px 5px #656565;
 }
 
 .home-card a{
@@ -47,6 +48,25 @@ a{
     color: black;
 }
 
-.home-card h1{
-    font-size: 2px;
+.home-card h2{
+    font-size: 2rem;
+}
+
+.home-card h3{
+    font-size: 1rem;
+}
+
+.card--contents{
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-text{
+    margin: 5vh;
+}
+
+.button-quiz{
+    border: none;
+    background-color: #dac772;
+    color: white;
 }
