@@ -21,12 +21,12 @@
 
            <!-- Image and text -->
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php route('home')?>">
                     <img src="./img/quizz.png" width="80" height="80" class="d-inline-block align-top" alt="">
                     O'Quiz
                 </a>
-                <a class="nav-link" href="#">Accueil <span class=""></span></a>
-                <a class="nav-link" href="#">Mon compte <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo route('home')?>">Accueil <span class=""></span></a>
+                <a class="nav-link" href="<?php echo route('login')?>">Mon compte <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="#">Déconnexion <span class="sr-only">(current)</span></a>
 
             
