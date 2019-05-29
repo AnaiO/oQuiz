@@ -1,3 +1,5 @@
+
+
 nav, h1{
     font-family: 'Acme', sans-serif;
 
@@ -37,10 +39,11 @@ a{
 }
 
 .home-card{
-    margin: 5px auto;
+    margin: 10px auto;
     
     border-radius: 5px;
-    box-shadow: 10px 10px 5px #656565;
+    box-shadow: 5px 5px 9px 3px #cfcfcf;
+
 }
 
 .home-card a{
@@ -50,10 +53,13 @@ a{
 
 .home-card h2{
     font-size: 2rem;
+    font-family: 'Acme', sans-serif;
+    color : #f16043;
 }
 
 .home-card h3{
     font-size: 1rem;
+    
 }
 
 .card--contents{

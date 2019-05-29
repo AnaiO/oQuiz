@@ -8,8 +8,8 @@ class MainController extends Controller
 {
     public function homeAction()
     {
-        $quizzes = Quizzes::take(6)
-                            ->get();
+        $quizzes = Quizzes::all();
+                            
 
         return view('home', [
             'quizzes' => $quizzes

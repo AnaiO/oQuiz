@@ -7,16 +7,13 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" class="form-text text-muted">Nous ne communiquons jamais vos informations personnelles.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </section>
@@ -36,37 +33,32 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="inputAddress">Nom et prénom</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="">
             </div>
             <div class="form-group">
-                <label for="inputAddress2">Address 2</label>
+                <label for="inputAddress2">Adresse</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
+                <label for="inputCity">Ecole</label>
                 <input type="text" class="form-control" id="inputCity">
                 </div>
                 <div class="form-group col-md-4">
-                <label for="inputState">State</label>
+                <label for="inputState">Classe</label>
                 <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                    <option selected>2NDE</option>
+                    <option>1ERE</option>
                 </select>
                 </div>
                 <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
+                <label for="inputZip">F/M</label>
                 <input type="text" class="form-control" id="inputZip">
                 </div>
             </div>
             <div class="form-group">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-                </div>
+                
             </div>
             <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
