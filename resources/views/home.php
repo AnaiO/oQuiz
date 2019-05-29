@@ -1,5 +1,4 @@
-<?php echo view('layout.header');
-dump(route('quizView'));?>
+<?php echo view('layout.header');?>
 
             <div>
                 <h2> Bienvenue sur O'Quiz </h2>
@@ -10,22 +9,22 @@ dump(route('quizView'));?>
                 </p>
             </div>
 
-            <div class="row  container">
+            <div class="row container home-cards">
 
                <?php foreach ($quizzes as $quiz) : ?>
 
-               <div class="card " style="width: 18rem;">
-
-               
-                    <img src="./img/quizz-web.png" class="card-img-top" alt="quiz de culture">
-               
+                <div class="card home-card" style="width: 18rem;">
                     <div class="card-body">
-                        <a href="<?= route('quizView');?><?=$quiz->id?>"><h2 class="card-text"><?=$quiz->title?></h2> </a>
-                        <h3>Sous-titre</h3>
+                        <a href="<?= route('quizView');?><?=$quiz->id?>">
+                            <h2 class="card-title"><?=$quiz->title?></h2>
+                        </a>
+                        <h3 class="card-subtitle mb-2 text-muted">Sous-titre</h3>
                         <p class="card-text">By authorname</p>
+                        <a href="#" class="card-link">Voir le Quiz</a>
+                        
                     </div>
-
                 </div>
+
 
                 <?php endforeach;?>
             </div>

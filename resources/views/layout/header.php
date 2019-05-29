@@ -17,7 +17,7 @@
         <title>O'Quiz</title>
     </head>
     <body>
-        <main class="container">
+        <main class=" col-8 container">
 
            <!-- Image and text -->
             <nav class="navbar navbar-light bg-light ">

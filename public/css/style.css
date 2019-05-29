@@ -5,7 +5,12 @@ nav, h1{
 
 nav{
     font-size: 1.5em;
+    
    
+}
+
+nav a{
+    color: #f16043;
 }
 
 main{
@@ -25,3 +30,23 @@ a{
     align-self: center;
 }
 
+.home-cards{
+    display: flex;
+    margin: 4%;
+    text-align: center;
+}
+
+.home-card{
+    margin: 5px auto;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.home-card a{
+    text-decoration: none;
+    color: black;
+}
+
+.home-card h1{
+    font-size: 2px;
+}
