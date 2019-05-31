@@ -1,7 +1,7 @@
-<?php echo view('layout.header');?>
+<?php echo view('layout.header');
 
 
-COUCOU C EST MOI LA PAGE DE QUIZZ
+dump(route('home'));?>
 
 
 <?php echo view('layout.footer');?>

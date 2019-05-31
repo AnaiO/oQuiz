@@ -3,7 +3,7 @@
 <div class=" d-flex container">
     <section class="loginForm">
         <h1>Connectez-vous</h1>
-        <form>
+        <form action="" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -21,7 +21,7 @@
     <section class="loginForm">
         <h1>Nouveau visiteur</h1> 
         <p>créez votre compte pour acceder aux Quizz</p>
-         <form>
+         <form action="" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
