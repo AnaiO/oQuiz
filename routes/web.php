@@ -16,7 +16,7 @@ $router->get('/', [
     'uses' => 'MainController@homeAction'
 ]);
 
-$router->get('quiz/{id}', [
+$router->get('quiz/[{id}]', [
     'as' => 'quizView',
     'uses' => 'QuizController@showQuiz'
 ]);

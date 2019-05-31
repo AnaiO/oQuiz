@@ -20,7 +20,7 @@
                         </a>
                         <h3 class="card-subtitle mb-2 text-muted"><?=$quiz->description?></h3>
                         <p class="card-text"><?=$quiz->appUsers->firstname?> <?=$quiz->appUsers->lastname?></p>
-                        <a href="<?= route('quizView');?><?=$quiz->id?>" class="card-link"><button class="button-quiz">Voir le Quiz</button></a>
+                        <a href="<?=route('quizView', ['id' =>$quiz->id ]);?>" class="card-link"><button class="button-quiz">Voir le Quiz</button></a>
                         
                     </div>
                 </article>

@@ -12,7 +12,8 @@ class QuizController extends Controller
         $quizInfos = Quiz::find($id);
         $questionsCollection = Question::Where('quizzes_id', $id)
                                         ->get();
-        // $questionLevel = 
+        
+                                        dump($quizInfos);
 
 
         dump($questionsCollection);
