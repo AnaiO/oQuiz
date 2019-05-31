@@ -33,7 +33,7 @@
            
             <!-- //display en none fais attention  :  -->
                 
-            <div class="btn-group btn-group-toggle d-none" data-toggle="buttons">
+            <div class="btn-group btn-group-toggle " data-toggle="buttons">
                     <label class="btn btn-secondary active">
                         <input type="radio" name="options" id="option1" autocomplete="off" checked> Bonne réponse : <?=$question->answers_id;?>
                     </label>
