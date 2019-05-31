@@ -11,4 +11,10 @@ class Question extends Model
     {
         return $this->belongsTo('App\Level', 'levels_id');
     }
+
+    public function answer()
+    {
+       return $this->belongsTo('App\Answer', 'answers_id');
+    }
+
 }

@@ -31,24 +31,31 @@
             <p class="lead"><?=$question->anecdote;?></p>
             <hr class="my-4">
            
-            <!-- //display en none fais attention  :  -->
+            <!-- Answers generation  -->
                 
-            <div class="btn-group btn-group-toggle " data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Bonne réponse : <?=$question->answers_id;?>
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Réponse A Lorem, ipsum dolor s A velit quimilique nisi maxime.
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> Réponse A Lorem, ipsum dolor s A velit qimilique nisi maxime.
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> Réponse A Lorem, ipsum dolis, vitae similique nisi maxime.
-                    </label>
-            </div>  
-        </div>  
+            <?php 
+                foreach ( $randomWrongAnswers as $randomWrongAnswer)
+                {
+                        $answers[] = $randomWrongAnswer->description;
+                }
+                $answers[] = $question->answer->description;
+                shuffle($answers);
+               
+            ?>
 
+            <form action = "" method="post" class=" d-flex">
+                <?php foreach ($answers as $answer) : ?>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="answer" value="<?=$answer?>">
+                        <label class="form-check-label" for="answer">
+                            <?=$answer?>
+                        </label>
+                     </div>
+                 <?php $answers = []; endforeach;?>           
+            </form>  
+        </div>  
+       
     <?php endforeach;?>
     <!-- End questions -->
 
