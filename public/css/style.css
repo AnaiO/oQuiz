@@ -76,3 +76,32 @@ a{
     background-color: #dac772;
     color: white;
 }
+
+.question--jumbotron{
+    background-color: #f8f9fa;
+    padding: 0 6% 6% 6%;
+    color: black;
+    margin: 0 0 4% 0;
+}
+
+.question--jumbotron p{
+    
+    color: #f16043;
+    
+}
+
+.question--jumbotron h1{
+    
+    margin-top: 4%;
+    
+}
+
+.wiki{
+    margin: 1.5vh 0;
+    background-color: #dac772;
+    border: none;
+}
+
+.quiz--page{
+    margin-top: 5%;
+}

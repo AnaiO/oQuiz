@@ -1,31 +1,36 @@
 <?php echo view('layout.header'); ?>
 
-<section>
+<section class=" quiz--page">
+    <img src="https://img.icons8.com/color/48/000000/trophy.png">
     <h1>Quiz - <?=$quizInfos->title;?></h1>
     <p><?=$quizInfos->description;?></p>
-    <span>Auteur : <?=$quizInfos->appUsers->firstname?> <?=$quizInfos->appUsers->lastname?></span>
+    <span>Auteur : <?=$quizInfos->appUsers->firstname?> <?=$quizInfos->appUsers->lastname?></span><br>
 
-    <?php foreach ($wikiDistinct as $wiki) : ?>
-         <div> <?=$wiki->wiki?> </div>
+    <!-- Tags wiki -->
 
-     <?php endforeach;?>
+        <?php foreach ($wikiDistinct as $wiki) : ?>
+            <div class="btn btn-primary btn-sm wiki"> <?php echo str_replace("_", " ", $wiki->wiki);?> </div>
+
+        <?php endforeach;?>
    
+     <!-- End  Tags wiki -->
+
+     <!-- Questions -->
      <?php foreach ($questionsCollection as $question) : ?>
 
-         <div class="jumbotron">
+         <div class="jumbotron question--jumbotron">
+            <span class="badge badge-<?php if($question->level->name === 'Expert'){
+                                                    echo "danger";
+                                                }else if ($question->level->name === 'Confirmé'){
+                                                    echo "warning";
+                                                }else{
+                                                    echo "success";
+                                                }?>"><?=$question->level->name;?></span> 
+         
             <h1 class="display-4"><?=$question->question;?></h1>
             <p class="lead"><?=$question->anecdote;?></p>
             <hr class="my-4">
-            <span class="badge badge-<?php if($question->level->name === 'Expert'){
-                                                echo "danger";
-                                            }else if ($question->level->name === 'Confirmé'){
-                                                echo "warning";
-                                            }else{
-                                                echo "success";
-                                            }?>"><?=$question->level->name;?></span> 
-                                            
-
-
+           
             <!-- //display en none fais attention  :  -->
                 
             <div class="btn-group btn-group-toggle d-none" data-toggle="buttons">
@@ -45,6 +50,7 @@
         </div>  
 
     <?php endforeach;?>
+    <!-- End questions -->
 
      
 
