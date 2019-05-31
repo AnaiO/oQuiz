@@ -10,17 +10,17 @@ class QuizController extends Controller
     public function showQuiz($id)
     {
         $quizInfos = Quiz::find($id);
-        $questionsCollection = Question::Where('quizzes_id', $id)
+        $questionsCollection = Question::where('quizzes_id', $id)
                                         ->get();
+        $wikiDistinct = Question::where('quizzes_id', $id)->select('wiki')->distinct()->get();
+
+
         
-                                        dump($quizInfos);
-
-
-        dump($questionsCollection);
 
         return view('quiz', [
             'quizInfos' => $quizInfos,
-            'questionsCollection' => $questionsCollection
+            'questionsCollection' => $questionsCollection,
+            'wikiDistinct' => $wikiDistinct
 
         ]);
     }

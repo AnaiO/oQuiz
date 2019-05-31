@@ -4,9 +4,13 @@
     <h1>Quiz - <?=$quizInfos->title;?></h1>
     <p><?=$quizInfos->description;?></p>
     <span>Auteur : <?=$quizInfos->appUsers->firstname?> <?=$quizInfos->appUsers->lastname?></span>
-    
+
+    <?php foreach ($wikiDistinct as $wiki) : ?>
+         <div> <?=$wiki->wiki?> </div>
+
+     <?php endforeach;?>
    
-        <?php foreach ($questionsCollection as $question) : ?>
+     <?php foreach ($questionsCollection as $question) : ?>
 
          <div class="jumbotron">
             <h1 class="display-4"><?=$question->question;?></h1>
@@ -40,7 +44,7 @@
             </div>  
         </div>  
 
-        <?php endforeach;?>
+    <?php endforeach;?>
 
      
 
