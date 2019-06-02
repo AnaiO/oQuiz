@@ -1,11 +1,11 @@
 <?=view ('layout.header');?>
 
 <div class=" d-flex container">
+<!-- login form -->
     <section class="loginForm">
         <h1>Connectez-vous</h1>
         <form action="" method="post">
-
-         <div class="form-row">
+            <div class="form-row">
                 <div class="form-group col-6">
                     <label for="lastname">Nom</label>
                     <input type="text" class="form-control" id="lastname" placeholder="Nom">
@@ -15,7 +15,6 @@
                     <input type="text" class="form-control" id="firstname" placeholder="Prénom">
                 </div>
               </div>  
-              
             <div class="form-group">
                 <label for="email">Email </label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
@@ -25,11 +24,12 @@
                 <label for="exampleInputPassword1">Mot de passe</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
-           
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </section>
+<!-- End login form -->
 
+<!-- Sign up form  -->
     <section class="loginForm">
         <h1>Nouveau visiteur</h1> 
         <p>créez votre compte pour acceder aux Quizz</p>
