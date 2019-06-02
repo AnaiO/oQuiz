@@ -47,7 +47,8 @@
                 <?php foreach ($answers as $answer) : ?>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" id="<?=$answer?>" value="<?=$answer?>">
+                    
+                        <!-- <input class="form-check-input" type="radio" name="answer" id="<?=$answer?>" value="<?=$answer?>"> -->
                         <label class="form-check-label" for="<?=$answer?>">
                             <?=$answer?>
                         </label>

@@ -19,15 +19,13 @@ class UserController extends Controller
         $firstname   = isset($request->firstname)? htmlspecialchars($request->firstname) : "";
         $lastname    = isset($request->lastname)? htmlspecialchars($request->lastname) : "";   
         $email       = isset($request->email)? htmlspecialchars($request->email) : "";   
-        $password    = isset($request->password)? htmlspecialchars($request->password) : "";         
-
-        //entrer àa en bdd, table app_users
-        //ouvrir une session
-        //rediriger vers la page d'accueil 
+        $password    = isset($request->password)? htmlspecialchars($request->password) : "";        
         
-
-        if(empty(AppUsers::where('email', $email)))
-        {
+        $emailAlreadyExist = AppUsers::where('email', $email)->get();
+       
+        if(count($emailAlreadyExist) != 0){
+            echo "deja enregistré";
+        }else{
             $appUsers = new AppUsers;
             $appUsers->firstname = ucwords(strtolower($firstname));
             $appUsers->lastname = ucwords(strtolower($lastname));

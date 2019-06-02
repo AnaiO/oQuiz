@@ -102,6 +102,10 @@ a{
     border: none;
 }
 
+.wiki:hover{
+    background-color: #f16043;
+}
+
 .quiz--page{
     margin-top: 5%;
 }
