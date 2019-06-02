@@ -25,3 +25,8 @@ $router->get('/login', [
     'as' => 'login',
     'uses' => 'UserController@logForm'
 ]);
+
+$router->post('/signup', [
+    'as' => 'signup',
+    'uses' => 'UserController@signupPost'
+]);

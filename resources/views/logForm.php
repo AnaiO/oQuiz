@@ -4,25 +4,25 @@
 <!-- login form -->
     <section class="loginForm">
         <h1>Connectez-vous</h1>
-        <form action="" method="post">
+        <form action="<?=route('signup');?>" method="post">
             <div class="form-row">
                 <div class="form-group col-6">
                     <label for="lastname">Nom</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Nom">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom">
                 </div>
                 <div class="form-group col-6">
                     <label for="firstname">Prénom</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Prénom">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom">
                 </div>
               </div>  
             <div class="form-group">
                 <label for="email">Email </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
                 <small id="emailHelp" class="form-text text-muted">Nous ne communiquons jamais vos informations personnelles.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Mot de passe</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
