@@ -43,12 +43,12 @@
                
             ?>
 
-            <form action = "" method="post" class=" d-flex">
+            <form action = "" method="post" class=" d-flex justify-content-around">
                 <?php foreach ($answers as $answer) : ?>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" id="answer" value="<?=$answer?>">
-                        <label class="form-check-label" for="answer">
+                        <input class="form-check-input" type="radio" name="answer" id="<?=$answer?>" value="<?=$answer?>">
+                        <label class="form-check-label" for="<?=$answer?>">
                             <?=$answer?>
                         </label>
                      </div>
