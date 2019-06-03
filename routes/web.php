@@ -30,3 +30,8 @@ $router->post('/signup', [
     'as' => 'signup',
     'uses' => 'UserController@signupPost'
 ]);
+
+$router->get('/tags', [
+    'as' => 'tags',
+    'uses' => 'TagController@tags'
+]);
