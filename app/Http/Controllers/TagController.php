@@ -6,6 +6,10 @@ class TagController extends Controller
 {
     public function tags()
     {
-        return view('')
+        $tags = Tag::all();
+
+        return view('tag', [
+            'tags' => $tags
+        ]);
     }
 }
