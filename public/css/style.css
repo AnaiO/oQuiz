@@ -11,6 +11,10 @@ nav{
    
 }
 
+h1{
+    margin-top : 2%;
+}
+
 nav a{
     color: #f16043;
 }
@@ -118,5 +122,11 @@ ol li{
     background-color: #f16043;
     border-color: #dac772;
 }
+
+.tagLinks{
+    
+    margin-top: 2%;
+}
+
 
 
