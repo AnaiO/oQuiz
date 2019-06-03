@@ -12,9 +12,9 @@ class Question extends Model
         return $this->belongsTo('App\Level', 'levels_id');
     }
 
-    public function answer()
+    public function answers()
     {
-       return $this->belongsTo('App\Answer', 'answers_id');
+       return $this->hasMany('App\Answer', 'questions_id');
     }
 
 }

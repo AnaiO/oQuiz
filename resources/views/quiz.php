@@ -6,17 +6,16 @@
     <p><?=$quizInfos->description;?></p>
     <span>Auteur : <?=$quizInfos->appUsers->firstname?> <?=$quizInfos->appUsers->lastname?></span><br>
 
-    <!-- Tags wiki -->
 
-        <?php foreach ($wikiDistinct as $wiki) : ?>
-            <div class="btn btn-primary btn-sm wiki"> <?php echo str_replace("_", " ", $wiki->wiki);?> </div>
-
+     <!-- Tags  -->
+        <?php foreach ($quizInfos->tags as $tag) : ?>
+            <div class="btn btn-primary btn-sm wiki"> <?php echo str_replace("_", " ", $tag->name);?> </div>
         <?php endforeach;?>
-   
-     <!-- End  Tags wiki -->
+    <!-- End  Tags  -->
+
 
      <!-- Questions -->
-     <?php foreach ($questionsCollection as $question) : ?>
+     <?php foreach ($quizInfos->questions as $question) : ?>
 
          <div class="jumbotron question--jumbotron">
             <span class="badge badge-<?php if($question->level->name === 'Expert'){
@@ -32,28 +31,21 @@
             <hr class="my-4">
            
             <!-- Answers generation  -->
-                
-            <?php 
-                foreach ( $randomWrongAnswers as $randomWrongAnswer)
-                {
-                        $answers[] = $randomWrongAnswer->description;
-                }
-                $answers[] = $question->answer->description;
-                shuffle($answers);
-               
-            ?>
 
             <form action = "" method="post" class=" d-flex justify-content-around">
-                <?php foreach ($answers as $answer) : ?>
+                <?php foreach ($question->answers as $answer) : ?>
 
                     <div class="form-check">
-                    
-                        <!-- <input class="form-check-input" type="radio" name="answer" id="<?=$answer?>" value="<?=$answer?>"> -->
-                        <label class="form-check-label" for="<?=$answer?>">
-                            <?=$answer?>
+                        <ul>
+                        <!-- <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>"> -->
+                        <label class="form-check-label" for="<?=$answer->description?>">
+                           
+                                <li><?=$answer->description?></li>
+                            
                         </label>
+                        </ul> 
                      </div>
-                 <?php $answers = []; endforeach;?>           
+                 <?php  endforeach;?>           
             </form>  
         </div>  
        

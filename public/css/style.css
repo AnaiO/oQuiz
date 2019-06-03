@@ -24,6 +24,10 @@ a{
     text-decoration: none;
 }
 
+ol li{
+    list-style-type: lower-alpha;
+}
+
 .loginForm{
     flex: 1;
     margin: 3vw;

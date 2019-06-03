@@ -15,7 +15,7 @@ class Quiz extends Model
 
     public function questions()
     {
-        return $this->hasMany('App\Question', 'answers_id');
+        return $this->hasMany('App\Question', 'quizzes_id');
     }
 
     public function tags()
