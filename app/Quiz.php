@@ -12,4 +12,14 @@ class Quiz extends Model
     {
         return $this->belongsTo('App\AppUsers');
     }
+
+    public function questions()
+    {
+        return $this->hasMany('App\Question', 'answers_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag', 'quizzes_has_tags', 'quizzes_id', 'tags_id');
+    }
 }

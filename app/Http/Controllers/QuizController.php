@@ -12,17 +12,17 @@ class QuizController extends Controller
     {
         $quizInfos = Quiz::find($id);
 
-        $questionsCollection = Question::where('quizzes_id', $id)
-                                        ->get();
-        $wikiDistinct = Question::where('quizzes_id', $id)
-                                ->select('wiki')
-                                ->distinct()
-                                ->get();
-        $randomWrongAnswers = Answer::where('questions_id', "!=", $id)
-                                        ->take(3)
-                                        ->inRandomOrder()
-                                        ->get();
-                                    dump($randomWrongAnswers);
+        // $questionsCollection = Question::where('quizzes_id', $id)
+        //                                 ->get();
+        // $wikiDistinct = Question::where('quizzes_id', $id)
+        //                         ->select('wiki')
+        //                         ->distinct()
+        //                         ->get();
+        // $randomWrongAnswers = Answer::where('questions_id', "!=", $id)
+        //                                 ->take(3)
+        //                                 ->inRandomOrder()
+        //                                 ->get();
+        //                             dump($randomWrongAnswers);
 
 
 
@@ -30,9 +30,9 @@ class QuizController extends Controller
 
         return view('quiz', [
             'quizInfos' => $quizInfos,
-            'questionsCollection' => $questionsCollection,
-            'wikiDistinct' => $wikiDistinct,
-            'randomWrongAnswers' => $randomWrongAnswers
+            // 'questionsCollection' => $questionsCollection,
+            // 'wikiDistinct' => $wikiDistinct,
+            // 'randomWrongAnswers' => $randomWrongAnswers
 
         ]);
     }
