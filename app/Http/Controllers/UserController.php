@@ -60,7 +60,6 @@ class UserController extends Controller
             'password' => 'required'
         ]);
         
-
         $email = $request->email;
         $password = $request->password;
 
@@ -72,9 +71,10 @@ class UserController extends Controller
              if(Hash::check($password, $userAccount->password))
              {
                 UserSession::connect($email);
-                dump($_SESSION); 
 
-             }else{
+                return redirect()->route('home');
+                
+            }else{
                  echo "mot de passe invalide";
              }
         }else
@@ -82,4 +82,5 @@ class UserController extends Controller
              echo"utilisateur inconnu";
          }
     }
+    
 }

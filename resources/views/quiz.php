@@ -37,7 +37,11 @@
 
                     <div class="form-check">
                         <ul>
-                        <!-- <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>"> -->
+
+                        <?php if(!empty($_SESSION)) : ?>
+                        <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>">
+                         <?php endif; ?>
+
                         <label class="form-check-label" for="<?=$answer->description?>">
                            
                                 <li><?=$answer->description?></li>

@@ -14,7 +14,7 @@
 
                 <article class="card home-card" style="width: 18rem;">
                     <div class="card-body card--contents">
-                        <a href="<?= route('quizView');?><?=$quiz->id?>">
+                        <a href="<?=route('quizView', ['id' =>$quiz->id ]);?>">
                             <h2 class="card-title"><?=$quiz->title?></h2>
                         </a>
                         <h3 class="card-subtitle mb-2 text-muted"><?=$quiz->description?></h3>
