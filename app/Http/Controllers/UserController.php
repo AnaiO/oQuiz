@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller 
 {
+
     public function logForm()
     {
         return view('logForm');
@@ -82,5 +83,12 @@ class UserController extends Controller
              echo"utilisateur inconnu";
          }
     }
-    
+
+    public function logout()
+    {
+        UserSession::disconnect();
+        return redirect()->route('login');
+    }
+
+
 }

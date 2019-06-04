@@ -46,7 +46,7 @@ $router->post('/signin', [
     'uses'  => 'UserController@signinPost'
 ]);
 
-$router->post('/logout', [
+$router->get('/logout', [
     'as' => 'logout',
     'uses' => 'UserController@logout'
 ]);

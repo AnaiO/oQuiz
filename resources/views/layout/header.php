@@ -27,7 +27,7 @@
                 </a>
                 <a class="nav-link" href="<?php echo route('home');?>">Accueil <span class=""></span></a>
                 <a class="nav-link" href="<?php echo route('login');?>">Mon compte <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="#">Déconnexion <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo route('logout');?>">Déconnexion <span class="sr-only"></span></a>
 
             
             </nav>
