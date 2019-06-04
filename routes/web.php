@@ -40,3 +40,8 @@ $router->get('/tags/{tagId}/quiz', [
     'as' => 'quizTag',
     'uses' => 'TagController@quiz'
 ]);
+
+$router->post('/signin', [
+    'as' => 'signin',
+    'uses'  => 'UserController@signinPost'
+]);
