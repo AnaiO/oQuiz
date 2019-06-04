@@ -32,16 +32,16 @@
            
             <!-- Answers generation  -->
 
-            <form action = "" method="post" class="">
+            <form action = "<?=route('note');?>" method="post">
                 <ul class="d-flex justify-content-around">
                 
                     <?php foreach ($question->answers as $answer) : ?>
                         <div class="form-check ">
                             <?php if(!empty($_SESSION)) : ?>
-                            <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>">
+                            <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?>">
                             <?php endif; ?>
 
-                            <label class="form-check-label" for="<?=$answer->description?>">
+                            <label class="form-check-label" for="<?=$answer->id?>">
                             <li ><?=$answer->description?></li>
                             </label>
                         </div>

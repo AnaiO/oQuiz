@@ -2,6 +2,9 @@
 namespace App\Http\Controllers;
 
 use App\Quiz;
+use App\Answer;
+use App\Question;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class QuizController extends Controller 
@@ -22,5 +25,21 @@ class QuizController extends Controller
         return view('quiz', [
             'quizInfos' => $quizInfos,
         ]);
+    }
+
+    public function note(Request $request)
+    {
+        dump($_POST);
+        $note = 0;
+
+        foreach ($_POST as $questionId => $answerId)
+        {
+            $question = Question::find($questionId);
+            if($question->answers_id == $answerId){
+                $note += 1;
+            }
+           
+        }
+        return $note;
     }
 }
