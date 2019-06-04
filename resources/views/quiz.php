@@ -1,4 +1,4 @@
-<?php echo view('layout.header'); ?>
+<?php echo view('layout.header');?>
 
 <section class=" quiz--page">
     <img src="https://img.icons8.com/color/48/000000/trophy.png">
@@ -12,6 +12,12 @@
             <div class="btn btn-primary btn-sm wiki"> <?php echo str_replace("_", " ", $tag->name);?> </div>
         <?php endforeach;?>
     <!-- End  Tags  -->
+
+    <!-- Note  -->
+    <?php if(isset($_GET)) : ?>
+        <div>Note : <?=$_GET['note'];?>/10 ! </div>
+    <?php endif; ?>
+    <!-- end Note  -->
 
 
      <!-- Questions -->
@@ -32,10 +38,10 @@
            
             <!-- Answers generation  -->
 
-            <form action = "<?=route('note');?>" method="post">
+            <form action = "<?=route('note', ['id' => $quizInfos->id]);?>" method="post">
                 <ul class="d-flex justify-content-around">
                 
-                    <?php foreach ($question->answers as $answer) : ?>
+                    <?php foreach ($question->answers->shuffle() as $answer) : ?>
                         <div class="form-check ">
                             <?php if(!empty($_SESSION)) : ?>
                             <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?>">

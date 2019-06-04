@@ -27,8 +27,9 @@ class QuizController extends Controller
         ]);
     }
 
-    public function note(Request $request)
+    public function note(Request $request, $id)
     {
+        dump($id);
         dump($_POST);
         $note = 0;
 
@@ -40,6 +41,8 @@ class QuizController extends Controller
             }
            
         }
-        return $note;
+        return redirect()->route('quizView', [ 
+        'id' => $id,
+        'note' => $note]);
     }
 }
