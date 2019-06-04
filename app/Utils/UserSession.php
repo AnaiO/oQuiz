@@ -10,16 +10,19 @@ abstract class UserSession {
     /**
      * Méthode permettant de connecter un utilisateur
      * 
-     * @param \App\Models\User $user
+     * @param \App\User $user
      */
-    public static function connect(\App\Models\User $user) {
-        
+    public static function connect($user) {
+        $_SESSION[self::SESSION_INDEX_NAME] = $user;
     }
 
     /**
      * Méthode permettant de déconnecter un utilisateur
      */
     public static function disconnect() {
+        if(self::isConnected()){
+           unset($_SESSION[self::SESSION_INDEX_NAME]); 
+        }
         
     }
 
@@ -29,16 +32,18 @@ abstract class UserSession {
      * @return bool
      */
     public static function isConnected() : bool {
-        
+        return  (!empty($_SESSION[self::SESSION_INDEX_NAME]));
     }
 
     /**
      * Méthode permettant de récupérer le Model de l'utilisateur connecté
      * 
-     * @return \App\Models\User
+     * @return \App\User
      */
     public static function getUser() : \App\Models\User {
-        
+        if(self::isConnected()){
+            return $_SESSION[self::SESSION_INDEX_NAME];
+        }
     }
 
     /**
@@ -46,7 +51,7 @@ abstract class UserSession {
      * 
      * @return bool
      */
-    public static function isAdmin() : bool {
+    // public static function isAdmin() : bool {
         
-    }
+    // }
 }

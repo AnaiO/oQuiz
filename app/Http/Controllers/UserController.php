@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\AppUsers;
+use App\Utils\UserSession;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
@@ -50,13 +51,35 @@ class UserController extends Controller
         }else{
             echo "email invalide";
         }
+    }
 
-        
-        
-        // dump($password);
-        
-        
+    public function signinPost(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
         
 
+        $email = $request->email;
+        $password = $request->password;
+
+        $userAccount = AppUsers::where('email', $email)
+                                ->first();
+
+        if (!empty($userAccount))
+        {
+             if(Hash::check($password, $userAccount->password))
+             {
+                UserSession::connect($email);
+                dump($_SESSION); 
+
+             }else{
+                 echo "mot de passe invalide";
+             }
+        }else
+        {
+             echo"utilisateur inconnu";
+         }
     }
 }

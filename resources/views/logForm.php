@@ -5,7 +5,7 @@
     <section class="loginForm">
             <h1>Connectez-vous</h1> 
             
-            <form action="" method="post">
+            <form action="<?=route('signin');?>" method="post">
             <div class="form-group">
                     <label for="email">Email </label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" required>
