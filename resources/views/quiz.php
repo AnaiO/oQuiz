@@ -32,31 +32,27 @@
            
             <!-- Answers generation  -->
 
-            <form action = "" method="post" class=" d-flex justify-content-around">
-                <?php foreach ($question->answers as $answer) : ?>
+            <form action = "" method="post" class="">
+                <ul class="d-flex justify-content-around">
+                
+                    <?php foreach ($question->answers as $answer) : ?>
+                        <div class="form-check ">
+                            <?php if(!empty($_SESSION)) : ?>
+                            <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>">
+                            <?php endif; ?>
 
-                    <div class="form-check">
-                        <ul>
+                            <label class="form-check-label" for="<?=$answer->description?>">
+                            <li ><?=$answer->description?></li>
+                            </label>
+                        </div>
+                     <?php  endforeach;?>  
+                 </ul>   
+        </div>       
+      <?php endforeach;?>
 
-                        <?php if(!empty($_SESSION)) : ?>
-                        <input class="form-check-input" type="radio" name="answer" id="<?=$answer->description?>" value="<?=$answer->description?>">
-                         <?php endif; ?>
-
-                        <label class="form-check-label" for="<?=$answer->description?>">
-                           
-                                <li><?=$answer->description?></li>
-                            
-                        </label>
-                        </ul> 
-                     </div>
-                 <?php  endforeach;?>           
-            </form>  
-        </div>  
-       
-    <?php endforeach;?>
     <!-- End questions -->
-
-     
+            <button type="submit" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
+            </form>      
 
    
 
