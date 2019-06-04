@@ -50,3 +50,8 @@ $router->get('/logout', [
     'as' => 'logout',
     'uses' => 'UserController@logout'
 ]);
+
+$router->get('/account', [
+    'as' => 'account',
+    'uses' => 'UserController@account'
+]);
