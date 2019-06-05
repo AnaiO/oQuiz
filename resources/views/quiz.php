@@ -1,4 +1,5 @@
-<?php echo view('layout.header');?>
+<?php echo view('layout.header');
+dump($_POST);?>
 
 <section class=" quiz--page">
     <img src="https://img.icons8.com/color/48/000000/trophy.png">
@@ -14,9 +15,9 @@
     <!-- End  Tags  -->
 
     <!-- Note  -->
-    <?php if(isset($_GET)) : ?>
-        <div>Note : <?=$_GET['note'];?>/10 ! </div>
-    <?php endif; ?>
+   <?php if(!empty($_POST)){
+       echo '<span class="finalNote">'.$note . '/10</div>';
+   }?>
     <!-- end Note  -->
 
 
@@ -38,7 +39,7 @@
            
             <!-- Answers generation  -->
 
-            <form action = "<?=route('note', ['id' => $quizInfos->id]);?>" method="post">
+            <form action="" method="post">
                 <ul class="d-flex justify-content-around">
                 
                     <?php foreach ($question->answers->shuffle() as $answer) : ?>

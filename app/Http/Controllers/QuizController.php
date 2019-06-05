@@ -29,9 +29,9 @@ class QuizController extends Controller
 
     public function note(Request $request, $id)
     {
-        dump($id);
-        dump($_POST);
+    
         $note = 0;
+        $quizInfos = Quiz::find($id);
 
         foreach ($_POST as $questionId => $answerId)
         {
@@ -41,8 +41,12 @@ class QuizController extends Controller
             }
            
         }
-        return redirect()->route('quizView', [ 
-        'id' => $id,
-        'note' => $note]);
+        return view('quiz', [
+            'id' => $id,
+            'note' => $note,
+            'quizInfos' => $quizInfos
+            ]);
     }
+
+   
 }

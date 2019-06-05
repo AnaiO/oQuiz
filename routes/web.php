@@ -56,7 +56,7 @@ $router->get('/account', [
     'uses' => 'UserController@account'
 ]);
 
-$router->post('/note/{id}', [
-    'as' => 'note',
+$router->post('quiz/{id}', [
+    'as' => 'quizCorrect',
     'uses' => 'QuizController@note'
 ]);
