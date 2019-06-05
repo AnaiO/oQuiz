@@ -1,7 +1,7 @@
 <?php echo view('layout.header');
 
 dump($_POST);
-dump($answers);?>
+// dump($answers);?>
 
 <section class=" quiz--page">
     <img src="https://img.icons8.com/color/48/000000/trophy.png">
@@ -46,10 +46,11 @@ dump($answers);?>
             <form action="" method="post">
                 <ul class="d-flex justify-content-around">
 
-                 <?php if(empty($_POST)) : ?>
-                    <?php foreach ($question->answers->shuffle() as $answer) : ?>
 
-                       
+                 <?php if(empty($_POST)) : ?>
+
+
+                    <?php foreach ($question->answers->shuffle() as $answer) : ?>
                             <div class="form-check ">
 
                                 <?php if(!empty($_SESSION)) : ?>
@@ -60,17 +61,19 @@ dump($answers);?>
                                 <li ><?=$answer->description?></li>
                                 </label>
                             </div>
-                                            
-                                           
                      <?php  endforeach; ?> 
+
+
                      <?php else: ?>
-                                           
-                        <span class="">Ta réponse : <?=key($answers[$i]) ;?></span>
-                         <span class ="">La bonne réponse : <?=$answers[$i][key($answers[$i])];?></span>
-                                                                
-                                            
-                                            
-                    <?php endif;?>
+                        <span class ="btn btn-outline-secondary">La bonne réponse :  <?=$answers[$i][key($answers[$i])];?></span>
+                        <span class="btn btn-outline-<?php if($answers[$i][key($answers[$i])] === key($answers[$i]))
+                                                            { 
+                                                                 echo 'success';
+                                                            }else{
+                                                                 echo 'danger';} ; ?>
+                            ">Ta réponse :  <?=key($answers[$i]) ;?></span>
+                         
+                     <?php endif;?>
   
                  </ul>   
         </div>       
