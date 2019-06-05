@@ -42,8 +42,9 @@ class QuizController extends Controller
 
             $correctAnswer = self::getCorrectAnswer($questionId);
             $postAnswer = self::getPostAnswer($answerId);
-            $answers[$postAnswer] = $correctAnswer;
+            $answers[] = [$postAnswer => $correctAnswer];
         }
+        dump($answers);
         
         return view('quiz', [
             'id' => $id,

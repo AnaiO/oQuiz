@@ -1,6 +1,7 @@
 <?php echo view('layout.header');
 
-dump($_POST);?>
+dump($_POST);
+dump($answers);?>
 
 <section class=" quiz--page">
     <img src="https://img.icons8.com/color/48/000000/trophy.png">
@@ -23,9 +24,9 @@ dump($_POST);?>
 
 
      <!-- Questions -->
-     <?php foreach ($quizInfos->questions as $question) : ?>
+     <?php for ($i=0; $i<count($quizInfos->questions); $i++) : ?>
     
-     
+     <?php $question = $quizInfos->questions[$i];?>
 
          <div class="jumbotron question--jumbotron">
             <span class="badge badge-<?php if($question->level->name === 'Expert'){
@@ -64,15 +65,16 @@ dump($_POST);?>
                      <?php  endforeach; ?> 
                      <?php else: ?>
                                            
+                        <span class="">Ta réponse : <?=key($answers[$i]) ;?></span>
+                         <span class ="">La bonne réponse : <?=$answers[$i][key($answers[$i])];?></span>
+                                                                
                                             
-                                            Ta réponse : <?=key($answers);?>
-                                            La bonne réponse : 
                                             
-                                            <?php endif;?>
+                    <?php endif;?>
   
                  </ul>   
         </div>       
-      <?php endforeach ; ?>
+    <?php endfor ; ?>
 
     <!-- End questions -->
             <button type="submit" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
