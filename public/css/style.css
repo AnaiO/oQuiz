@@ -133,5 +133,14 @@ ol li{
     border-color: #dac772;
 }
 
+.finalNote{
+    font-size: 76px;
+}
+
+a.top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px; }
+
 
 

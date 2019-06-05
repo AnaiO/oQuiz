@@ -1,7 +1,4 @@
-<?php echo view('layout.header');
-
-dump($_POST);
-// dump($answers);?>
+<?php echo view('layout.header');?>
 
 <section class=" quiz--page">
     <img src="https://img.icons8.com/color/48/000000/trophy.png">
@@ -16,9 +13,12 @@ dump($_POST);
         <?php endforeach;?>
     <!-- End  Tags  -->
 
+
     <!-- Note  -->
    <?php if(!empty($_POST)){
-       echo '<span class="finalNote">'.$note . '/10</div>';
+       echo '<div class="alert alert-success finalNote" role="alert">
+            Ta note  : ' .$note . '/10
+            </div>';
    }?>
     <!-- end Note  -->
 
@@ -81,7 +81,8 @@ dump($_POST);
 
     <!-- End questions -->
             <button type="submit" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
-            </form>      
+            </form>  
+            <a href="#" class="top">Haut de page</a>    
 
    
 
