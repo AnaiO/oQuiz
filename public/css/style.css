@@ -134,13 +134,12 @@ ol li{
 }
 
 .finalNote{
-    font-size: 76px;
+    font-size: 2rem;
 }
 
-a.top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20px; }
+.top{
+    float: right;
+}
 
 
 

@@ -54,7 +54,7 @@
                             <div class="form-check ">
 
                                 <?php if(!empty($_SESSION)) : ?>
-                                <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?>">
+                                <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?> " required>
                                 <?php endif; ?>
 
                                 <label class="form-check-label" for="<?=$answer->id?>">
@@ -80,9 +80,10 @@
     <?php endfor ; ?>
 
     <!-- End questions -->
-            <button type="submit" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
+            <button type="submit" id="submitButton" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
             </form>  
-            <a href="#" class="top">Haut de page</a>    
+            <a href="#" class=" btn btn-outline-warning top">Haut de page</a>
+                  
 
    
 
