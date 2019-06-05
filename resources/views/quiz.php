@@ -1,4 +1,5 @@
 <?php echo view('layout.header');
+
 dump($_POST);?>
 
 <section class=" quiz--page">
@@ -23,6 +24,8 @@ dump($_POST);?>
 
      <!-- Questions -->
      <?php foreach ($quizInfos->questions as $question) : ?>
+    
+     
 
          <div class="jumbotron question--jumbotron">
             <span class="badge badge-<?php if($question->level->name === 'Expert'){
@@ -41,21 +44,35 @@ dump($_POST);?>
 
             <form action="" method="post">
                 <ul class="d-flex justify-content-around">
-                
-                    <?php foreach ($question->answers->shuffle() as $answer) : ?>
-                        <div class="form-check ">
-                            <?php if(!empty($_SESSION)) : ?>
-                            <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?>">
-                            <?php endif; ?>
 
-                            <label class="form-check-label" for="<?=$answer->id?>">
-                            <li ><?=$answer->description?></li>
-                            </label>
-                        </div>
-                     <?php  endforeach;?>  
+                 <?php if(empty($_POST)) : ?>
+                    <?php foreach ($question->answers->shuffle() as $answer) : ?>
+
+                       
+                            <div class="form-check ">
+
+                                <?php if(!empty($_SESSION)) : ?>
+                                <input class="form-check-input" type="radio" name="<?=$answer->questions_id?>" id="<?=$answer->id?>" value="<?=$answer->id?>">
+                                <?php endif; ?>
+
+                                <label class="form-check-label" for="<?=$answer->id?>">
+                                <li ><?=$answer->description?></li>
+                                </label>
+                            </div>
+                                            
+                                           
+                     <?php  endforeach; ?> 
+                     <?php else: ?>
+                                           
+                                            
+                                            Ta réponse : <?=key($answers);?>
+                                            La bonne réponse : 
+                                            
+                                            <?php endif;?>
+  
                  </ul>   
         </div>       
-      <?php endforeach;?>
+      <?php endforeach ; ?>
 
     <!-- End questions -->
             <button type="submit" class="btn btn-primary btn-lg button--quiz">Envoyer !</button>
