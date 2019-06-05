@@ -92,8 +92,11 @@ class UserController extends Controller
 
     public function account()
     {
-       echo "salut C EST LA PAGE DE FILPRO TAVU".PHP_EOL;
-       echo "email = " . $_SESSION[UserSession::SESSION_INDEX_NAME];
+       $email = $_SESSION[UserSession::SESSION_INDEX_NAME];
+      return view('profile', [
+          'email' => $email
+      ]);
+       
     }
 
 }
